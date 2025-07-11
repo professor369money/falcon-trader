@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Falcon Trader</title>
+  <style>
+    body { font-family: Arial; background: #0f172a; color: #fff; text-align: center; padding: 50px; }
+    .box { background: #1e293b; border-radius: 12px; padding: 20px; max-width: 500px; margin: auto; }
+    input, button { padding: 10px; margin: 10px; border: none; border-radius: 8px; }
+    .balance { font-size: 24px; margin: 20px 0; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Falcon Trader 🦅</h1>
+    <div>
+      <label for="balance">Set Virtual Balance:</label><br>
+      <input type="number" id="balance" placeholder="Enter balance..." />
+      <button onclick="setBalance()">Set</button>
+    </div>
+    <div class="balance" id="showBalance">$0</div>
+    <iframe src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_xxx&symbol=EURUSD&interval=1&hidesidetoolbar=1&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=[]&theme=dark&style=1&timezone=Etc%2FUTC&withdateranges=1&hideideas=1&hidevolume=1&hidelegend=1" width="100%" height="400" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+  </div>
+  <script>
+    function setBalance() {
+      const val = document.getElementById("balance").value;
+      document.getElementById("showBalance").innerText = "$" + parseFloat(val).toLocaleString();
+    }
+  </script>
+</body>
+</html>
